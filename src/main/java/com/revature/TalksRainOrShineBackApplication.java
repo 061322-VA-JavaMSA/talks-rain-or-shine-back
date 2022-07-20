@@ -38,6 +38,8 @@ class AppStartupRunner implements ApplicationRunner {
     	a.setEmail("firsttest@email.com");
     	a.setUsername("ft");
     	a.setPassword("pass");
+    	a.setLocation(40101);
+    	a.setRole(1);
     	ts.addUser(a);
     	
     	User t1 = ts.getByUsername("ft");    	
@@ -46,16 +48,17 @@ class AppStartupRunner implements ApplicationRunner {
     	List<User> users = ts.getUsers();
     	System.out.println(users);
     	
-    	Blog b = new Blog();
-    	b.setBody("Hello World! First Blog Test!");
-    	b.setUserId(1);
-    	bs.addBlog(b);
+//    	Blog b = new Blog();
+//    	b.setBody("Hello World! First Blog Test!");
     	
-    	Blog b1 = bs.getBlogById(1);  	
-    	System.out.println("Test blog 1: " + b1);
+//    	b.setUserId(1);
+//    	bs.addBlog(b);
     	
-    	List<Blog> blogs = bs.getBlogs();
-    	System.out.println(blogs);
+//    	Blog b1 = bs.getBlogById(1);  	
+//    	System.out.println("Test blog 1: " + b1);
+    	
+//    	List<Blog> blogs = bs.getBlogs();
+//    	System.out.println(blogs);
     	
     }
 }
