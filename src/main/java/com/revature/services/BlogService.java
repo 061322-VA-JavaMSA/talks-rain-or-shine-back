@@ -13,6 +13,7 @@ public class BlogService {
 	
 	private BlogRepository br;
 	
+	
 	public BlogService(BlogRepository br) {
 		super();
 		this.br = br;
@@ -29,6 +30,12 @@ public class BlogService {
 	
 	public Blog addBlog(Blog blog) {
 		return br.save(blog);
+	}
+	
+	public List<Blog> findBlogsByUserId(int userId){
+		List<Blog> blogs = br.findBlogsByUserId(userId);
+		return blogs;
+		
 	}
 
 }
