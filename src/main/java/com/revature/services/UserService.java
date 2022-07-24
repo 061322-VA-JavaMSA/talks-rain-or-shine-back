@@ -26,6 +26,7 @@ public class UserService {
 		return ur.findUserByUsername(username);
 	}
 	
+	
 	public User addUser(User user) {
 		return ur.save(user);
 	}
