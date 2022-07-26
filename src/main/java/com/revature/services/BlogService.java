@@ -32,6 +32,11 @@ public class BlogService {
 		return br.save(blog);
 	}
 	
+	public void deleteBlog(int id) throws BlogNotFoundException {
+		Blog blog = br.findById(id).orElseThrow(() -> new BlogNotFoundException());
+		br.delete(blog);
+	}
+	
 	public List<Blog> findBlogsByUserId(int userId){
 		List<Blog> blogs = br.findBlogsByUserId(userId);
 		return blogs;
