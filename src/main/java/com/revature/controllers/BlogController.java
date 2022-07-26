@@ -4,11 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.revature.exceptions.BlogNotFoundException;
 import com.revature.models.Blog;
 import com.revature.services.BlogService;
 
@@ -36,6 +39,11 @@ public class BlogController {
 	@PostMapping("/blogs")
 	void addBlog(@RequestBody Blog blog) {
 		bs.addBlog(blog);
+	}
+	
+	@DeleteMapping("/blogs/{id}")
+	void deleteBlog(@PathVariable("id") int id) throws BlogNotFoundException {
+		bs.deleteBlog(id);
 	}
 	
 
