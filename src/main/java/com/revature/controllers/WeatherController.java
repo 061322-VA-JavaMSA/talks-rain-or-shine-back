@@ -14,7 +14,7 @@ public class WeatherController {
 	public WeatherController() {
 		super();
 	}
-	
+
 	@GetMapping(value="/weather")
 	@ResponseBody
 	private Object getWeatherClient(@RequestParam int location) {
@@ -22,7 +22,7 @@ public class WeatherController {
 		String uri = System.getenv("API_URI") + zipCode;
 		RestTemplate restTemplate = new RestTemplate();
 		Object apiResult = restTemplate.getForObject(uri, Object.class);
-		return apiResult;
+    return apiResult;
 	}
-	
+
 }
