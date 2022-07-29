@@ -12,7 +12,6 @@ public class CorsFix implements WebMvcConfigurer{
 			.allowedOrigins("http://pomtreesbucket.s3-website-us-east-1.amazonaws.com", 
 							"http://localhost:4200")
 			.allowedHeaders("*")
-			.exposedHeaders("Authorization")
 			.allowedMethods("GET", "OPTIONS", "PUT", "POST", "DELETE");
 	}
 }
