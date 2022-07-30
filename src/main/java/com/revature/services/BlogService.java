@@ -37,14 +37,13 @@ public class BlogService {
 		br.delete(blog);
 	}
 
-	public List<Blog> findBlogsByUserId(int userId){
+	public List<Blog> findBlogsByUserId(int userId) {
 		List<Blog> blogs = br.findBlogsByUserId(userId);
 		return blogs;
-
 	}
 
-  public Blog updateBlog(Blog blog) throws BlogNotFoundException {
-    return br.save(blog);
-  }
+	public Blog updateBlog(Blog blog) throws BlogNotFoundException {
+		return br.save(blog);
+	}
 
 }

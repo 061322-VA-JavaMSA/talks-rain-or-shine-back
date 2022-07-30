@@ -35,5 +35,9 @@ public class UserService {
 		User user = ur.findById(id).orElseThrow(() -> new UserNotFoundException());
 		return user;
 	}
+	
+	public User updateUser(User user) throws UserNotFoundException {
+		return ur.save(user);
+	}
 
 }
