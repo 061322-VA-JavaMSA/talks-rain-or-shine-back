@@ -11,6 +11,7 @@ public class UserDTO {
 	private String lastName;
 	private String email;
 	private String username;
+	private String password;
 	private int location;
 	private int role;
 	
@@ -25,6 +26,7 @@ public class UserDTO {
 		lastName = u.getLastName();
 		email = u.getEmail();
 		username = u.getUsername();
+		password = u.getPassword();
 		location = u.getLocation();
 		role = u.getRole();
 	}
@@ -69,6 +71,14 @@ public class UserDTO {
 		this.username = username;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public int getLocation() {
 		return location;
 	}
@@ -87,7 +97,7 @@ public class UserDTO {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(email, firstName, id, lastName, location, role, username);
+		return Objects.hash(email, firstName, id, lastName, location, password, role, username);
 	}
 
 	@Override
@@ -100,14 +110,16 @@ public class UserDTO {
 			return false;
 		UserDTO other = (UserDTO) obj;
 		return Objects.equals(email, other.email) && Objects.equals(firstName, other.firstName) && id == other.id
-				&& Objects.equals(lastName, other.lastName) && location == other.location && role == other.role
+				&& Objects.equals(lastName, other.lastName) && location == other.location
+				&& Objects.equals(password, other.password) && role == other.role
 				&& Objects.equals(username, other.username);
 	}
 
 	@Override
 	public String toString() {
 		return "UserDTO [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", username=" + username + ", location=" + location + ", role=" + role + "]";
+				+ ", username=" + username + ", password=" + password + ", location=" + location + ", role=" + role
+				+ "]";
 	}
-	
+
 }
