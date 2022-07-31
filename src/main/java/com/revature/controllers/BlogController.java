@@ -10,7 +10,7 @@ import com.revature.models.Blog;
 import com.revature.services.BlogService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "http://pomtreesbucket.s3-website-us-east-1.amazonaws.com"})
 public class BlogController {
 
 	private BlogService bs;
