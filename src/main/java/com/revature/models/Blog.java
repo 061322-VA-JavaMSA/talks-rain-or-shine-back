@@ -25,6 +25,8 @@ public class Blog {
 	private int userId;
 	@Column(name="time_created", nullable=false)
 	private Date timeCreated;
+	@Column(name="blog_username", nullable=false)
+	private String blogUsername;
 
 
 	public Blog() {
@@ -39,7 +41,6 @@ public class Blog {
 		this.id = id;
 	}
 
-	
 	public String getBody() {
 		return body;
 	}
@@ -47,7 +48,6 @@ public class Blog {
 		this.body = body;
 	}
 
-	
 	public int getUserId() {
 		return userId;
 	}
@@ -55,18 +55,23 @@ public class Blog {
 		this.userId = userId;
 	}
 
-	
 	public Date getTimeCreated() {
 		return timeCreated;
 	}
-	public void setTimeCreated(Date date) {
-		this.timeCreated = date;
+	public void setTimeCreated(Date timeCreated) {
+		this.timeCreated = timeCreated;
 	}
 
-	
+	public String getBlogUsername() {
+		return blogUsername;
+	}
+	public void setBlogUsername(String blogUsername) {
+		this.blogUsername = blogUsername;
+	}
+
 	@Override
 	public int hashCode() {
-		return Objects.hash(body, id, timeCreated, userId);
+		return Objects.hash(blogUsername, body, id, timeCreated, userId);
 	}
 
 	@Override
@@ -78,13 +83,14 @@ public class Blog {
 		if (getClass() != obj.getClass())
 			return false;
 		Blog other = (Blog) obj;
-		return Objects.equals(body, other.body) && id == other.id && Objects.equals(timeCreated, other.timeCreated)
-				&& userId == other.userId;
+		return Objects.equals(blogUsername, other.blogUsername) && Objects.equals(body, other.body) && id == other.id
+				&& Objects.equals(timeCreated, other.timeCreated) && userId == other.userId;
 	}
 
 	@Override
 	public String toString() {
-		return "Blog [id=" + id + ", body=" + body + ", userId=" + userId + ", timeCreated=" + timeCreated + "]";
+		return "Blog [id=" + id + ", body=" + body + ", userId=" + userId + ", timeCreated=" + timeCreated
+				+ ", blogUsername=" + blogUsername + "]";
 	}
 	
 }
